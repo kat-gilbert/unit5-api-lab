@@ -35,3 +35,17 @@ div {
     padding: 10px;
     display: block;
 }
+
+h2 {
+    font-size: 16px;
+    margin-top: 40px;
+    padding: 5px;
+}
+
+#inputContainer {
+    margin: 45px;
+}
+
+h1 {
+    color: seagreen;
+}

@@ -13,7 +13,7 @@ promise.then(data => {
         console.log(data.data.children[i].data.title);
         console.log(data.data.children[i].data.thumbnail);
 
-        let div = document.createElement("div");
+        let div = document.createElement("h2");
         div.innerText = (data.data.children[i].data.title);
         let img = document.createElement("img");
         img.src = (data.data.children[i].data.thumbnail);
@@ -21,6 +21,7 @@ promise.then(data => {
         let permalink = data.data.children[i].data.permalink;
         link.href = "https://www.reddit.com" + permalink;
         link.innerHTML = "link to post";
+        link.target = "_blank";
     
         body.append(div); 
         body.append(img);
@@ -28,7 +29,7 @@ promise.then(data => {
 
     }});
 
-    //extended challenge didn't finish yet
+    //extended challenge - didn't finish yet
         input.addEventListener("submit", () => {
             let enterName = document.getElementById("enterSubredditName");
 
@@ -38,19 +39,19 @@ promise.then(data => {
             newPromise.then(data => {
                 for (let i = 0; i < 10; i++ ) {
                     console.log(data.data.children[i]);
-            
                     console.log(data.data.children[i].data.title);
                     console.log(data.data.children[i].data.thumbnail);
             
-                    let div = document.createElement("div");
+                    let h2 = document.createElement("h2");
                     div.innerText = (data.data.children[i].data.title);
                     let img = document.createElement("img");
                     img.src = (data.data.children[i].data.thumbnail);
                     let link = document.createElement('a');
                     link.innerHTML = "link to post"
                     link.href = "https://www.reddit.com" + data.data.children[i].data.permalink;
-                
-                    body.append(div); 
+                    link.target = "_blank";
+
+                    body.append(h2); 
                     body.append(img);
                     body.append(link);           
         }})});
